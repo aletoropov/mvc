@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * Файл конфигурации базы данных.
+ */
+
 return [
-    'host' => '',
-    'username' => '',
+    'host' => 'localhost',
+    'username' => 'root',
     'password' => '',
-    'database' => '',
+    'database' => 'mvcbasic',
 ];
