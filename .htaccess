@@ -1,6 +1,17 @@
+#Установка кодировки
 AddDefaultCharset utf-8
 
+#Запрет на просмотр листинга папок
+Options -Indexes
+
+#Разрешение проходить по символическим ссылкам
+Options +FollowSymLinks
+
+#Включаем mod_rewrite
 RewriteEngine on
+#Если запрос идет не к файлу
 RewriteCond %{REQUEST_FILENAME} !-f
+#Если запрос идет не к существующей директории
 RewriteCond %{REQUEST_FILENAME} !-d
+#Тогда все запросы переадресовываются на index.php
 RewriteRule ^(.*)$ index.php
