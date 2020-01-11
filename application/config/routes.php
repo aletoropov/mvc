@@ -11,9 +11,9 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'account/login' => [
-        'controller' => 'account',
-        'action' => 'login',
+    'main/about' => [
+        'controller' => 'main',
+        'action' => 'about',
     ],
     'news/show' => [
         'controller' => 'news',
