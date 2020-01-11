@@ -59,10 +59,10 @@ class Router
                     $controller = new $path($this->params['controller']);
                     $controller->$action();
                 } else {
-                    throw \Exception('Action: ' . $action . ' - не найден!');
+                    throw \Exception('Action: ' . htmlspecialchars($action) . ' - не найден!');
                 }
             } else {
-                throw new \Exception('Контроллер не найден: ' . $path);
+                throw new \Exception('Контроллер не найден: ' . htmlspecialchars($path));
             }
         } else {
             throw new \Exception('Маршрут не найден!');
