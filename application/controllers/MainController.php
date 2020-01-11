@@ -9,7 +9,8 @@ class MainController extends Controller
 
     public function indexAction()
     {
-        echo ' это MainController ';
+        $data['content'] = ' это MainController ';
+        $this->view->render('indexAction', $data);
     }
 
     public function aboutAction()
