@@ -4,16 +4,16 @@ namespace application\core;
 
 class Router
 {
-    protected $routes = [];
-    protected $params = [];
+    public $routes = [];
+    public $params = [];
 
     /**
      * Router constructor.
      * Подключаем файл роутинга.
      */
-    function __construct()
+    public function __construct()
     {
-        $arr = require_once ROOT_DIR.'/application/config/routes.php';
+        $arr = require_once ROOT_DIR . DIRECTORY_SEPARATOR . 'application' . DIRECTORY_SEPARATOR . 'config ' .DIRECTORY_SEPARATOR. 'routes.php';
         foreach ($arr as $key => $value) {
             $this->add($key, $value);
         }
