@@ -43,10 +43,16 @@ class Router
         return false;
     }
 
+    /**
+     * Запуск приложения.
+     *
+     * @throws \Exception
+     */
     public function run()
     {
         if ($this->match()) {
-            $path = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
+            $path = 'application'.DIRECTORY_SEPARATOR.'controllers' . DIRECTORY_SEPARATOR . ucfirst($this->params['controller']) . 'Controller';
+
             if (class_exists($path)) {
                 $action = $this->params['action'].'Action';
                 if (method_exists($path, $action)) {
